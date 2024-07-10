@@ -1,4 +1,17 @@
-2.Fibonacci series until limit
+1.Factorial:
+
+#include<stdio.h>
+void main()
+{
+  int num,fact=1;
+  scanf("%d",&num);
+  for(int i=0;i<num;i++){
+     fact*=(num-i);
+  }
+  printf("%d",fact);
+}
+________________________________________________________________________________________________________________
+2.Fibonacci series until limit:
 
 #include<stdio.h>
 void main()
@@ -15,7 +28,7 @@ void main()
     }
 }
 ___________________________________________________________________________________________________________
-3.Nth digit in Fibonacci series
+3.Nth digit in Fibonacci series:
 
 #include<stdio.h>
 void main()
@@ -31,7 +44,7 @@ void main()
     printf("%d",t2);
 }
 ____________________________________________________________________________________________________________________
-4.Sum of Fibonacci series
+4.Sum of Fibonacci series:
 
 #include<stdio.h>
 void main()
@@ -76,7 +89,27 @@ void main()
     printf("the number is not armstrong");
 }
 _________________________________________________________________________________________________________________________________
-7.Prime
+6.Palindrome:
+
+#include<stdio.h>
+void main()
+{
+  int num,cmp,temp,rev=0;
+  scanf("%d",&num);
+  cmp=num;
+  while(num>0)
+  {
+      temp=num%10;
+      rev=rev*10+temp;
+      num=num/10;
+  }
+  if(rev==cmp)
+    printf("Palindrome");
+  else
+    printf("Not a Palindrome");
+ }
+_____________________________________________________________________________________________________________________________________
+7.Prime:
 
 #include<stdio.h>
 void main()
