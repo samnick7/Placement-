@@ -1,1 +1,28 @@
+5.armstrong:
 
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+    int num,temp,temp1,digit=0,count=0,result;
+    printf("enter the number:");
+    scanf("%d",&num);
+    temp=num;
+    temp1=temp;
+    while(num>0)
+    {
+        num=num/10;
+        count++;
+    }
+    for(int i=0;i<count;i++)
+    {
+        digit=temp%10;
+        result+=pow(digit,count);
+        temp=temp/10;
+    }
+    if(result==temp1)
+    printf("the number is armstrong");
+    else
+    printf("the number is not armstrong");
+}
+_________________________________________________________________________________________________________________________________
