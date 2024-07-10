@@ -1,3 +1,20 @@
+2.Fibonacci series until limit
+
+#include<stdio.h>
+void main()
+{
+    int limit,t1=0,t2=1,t3;
+    scanf("%d",&limit);
+    printf("%d %d",t1,t2);
+    for(int i=0;i<limit-2;i++)
+    {
+        t3=t1+t2;
+        printf(" %d",t3);
+        t1=t2;
+        t2=t3;
+    }
+}
+___________________________________________________________________________________________________________
 5.armstrong:
 
 #include<stdio.h>
