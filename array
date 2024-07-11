@@ -1,0 +1,47 @@
+1.Write a program to accept N values into an integer array and display the contents of the array in the reverse order.
+
+#include <stdio.h>
+void main()
+{
+    int n;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=n-1;i>=0;i--)
+    {
+        printf("%d ",a[i]);
+    }
+}
+___________________________________________________________________________________________________________________________________________________
+2.Write a  program to count the number of 0s and 1s in an array that is in random order. You may assume that the array consists of only 0s and 1s.
+
+#include <stdio.h>
+void main()
+{
+    int n,count=0,count1=0;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==0)
+        {
+            count++;
+        }
+        else
+        {
+            count1++;
+        }
+    }
+    printf("count of 0's:%d\n",count);
+    printf("count of 1's:%d",count1);
+}
+_____________________________________________________________________________________________________________________________________________________________________
