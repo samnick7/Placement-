@@ -92,5 +92,34 @@ void main()
     }
 }
 ______________________________________________________________________________________________________________________________________________________________________
-5.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1
+5.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1.
+
+#include <stdio.h>
+void main()
+{
+    int n,search,flag=0;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter a search element:");
+    scanf("%d",&search);
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==search)
+        {
+            printf("a[%d]",i);
+            flag++;
+        }
+    }
+    if(flag==0)
+    {
+        printf("-1");
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________
+6.You are given an array of 0s and 1s in random order. Segregate 0s on left side and 1s on right side of the array .
 
