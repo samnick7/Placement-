@@ -72,3 +72,25 @@ void main()
 _______________________________________________________________________________________________________________________________________________________________
 4.Write a  Program to print all the repeated elements in a sorted array.
 
+#include <stdio.h>
+void main()
+{
+    int n;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==a[i+1])
+        {
+            printf("%d ",a[i]);
+        }
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________
+5.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1
+
