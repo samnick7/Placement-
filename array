@@ -45,3 +45,30 @@ void main()
     printf("count of 1's:%d",count1);
 }
 _____________________________________________________________________________________________________________________________________________________________________
+3. Write a  program to print the count of the elements in an array whose values are lesser than a key element in an unsorted array.
+
+#include <stdio.h>
+void main()
+{
+    int n,count=0,key;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter the key value:");
+    scanf("%d",&key);
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]<key)
+        {
+            count++;
+        }
+    }
+    printf("count of lesser than the key value:%d",count);
+}
+_______________________________________________________________________________________________________________________________________________________________
+4.Write a  Program to print all the repeated elements in a sorted array.
+
