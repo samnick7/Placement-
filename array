@@ -213,3 +213,30 @@ void main()
     }
 }
 __________________________________________________________________________________________________________________________
+10.Write a program  to delete the value at given position from the array.
+
+#include <stdio.h>
+void main()
+{
+    int n,a[50],pos;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter a position:");
+    scanf("%d",&pos);
+        for(int i=pos;i<=n;i++)
+        {
+            for(int j=i+1;j>i;j--)
+            {
+                a[i]=a[j];
+            }
+        }
+    for(int i=0;i<n-1;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+__________________________________________________________________________________________________________________________________________
