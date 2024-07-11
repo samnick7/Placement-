@@ -154,3 +154,59 @@ void main()
         printf("%d ",a[i]=1);
     }
 }
+________________________________________________________________________________________________________________________________________
+7.Write a program  to replace every element in an array with the sum of its right side elements.
+
+#include <stdio.h>
+void main()
+{
+    int n,sum=0;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+          sum+=a[j];
+        }
+    a[i]=sum;
+    sum=0;
+    }
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+_______________________________________________________________________________________________________________________________
+9.#include <stdio.h>
+void main()
+{
+    int n,a[50],pos,val;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter a position:");
+    scanf("%d",&pos);
+    printf("enter a value:");
+    scanf("%d",&val);
+        for(int i=n;i>pos;i--)
+        {
+            for(int j=i+1;j>i;j--)
+            {
+                a[j]=a[i];
+            }
+        }
+        a[pos]=val;
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
