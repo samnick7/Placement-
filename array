@@ -183,7 +183,9 @@ void main()
     }
 }
 _______________________________________________________________________________________________________________________________
-9.#include <stdio.h>
+9.Write a program  to insert the value at given position in the array.
+
+#include <stdio.h>
 void main()
 {
     int n,a[50],pos,val;
@@ -197,7 +199,7 @@ void main()
     scanf("%d",&pos);
     printf("enter a value:");
     scanf("%d",&val);
-        for(int i=n;i>pos;i--)
+        for(int i=n;i>=pos;i--)
         {
             for(int j=i+1;j>i;j--)
             {
@@ -205,8 +207,9 @@ void main()
             }
         }
         a[pos]=val;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<=n;i++)
     {
         printf("%d ",a[i]);
     }
 }
+__________________________________________________________________________________________________________________________
