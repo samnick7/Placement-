@@ -129,3 +129,17 @@ void main()
 ________________________________________________________________________________________________________________________________________
 8.Write a program in C to count the total number of words in a string.
 
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index=0,count=0;
+ fgets(str,sizeof(str),stdin);
+ while(str[index]!='\0')
+ {
+   if(str[index]==' '||str[index]=='\t'||str[index]=='\n')
+   count++;
+   index++;
+ }
+ printf("count of words=%d",count);
+}
