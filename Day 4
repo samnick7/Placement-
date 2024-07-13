@@ -104,3 +104,28 @@ void main()
  printf("%s",str);
 }
 ___________________________________________________________________________________________________________________________________________
+7.Write a program in C to convert string to toggle case	.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index=0;
+ fgets(str,sizeof(str),stdin);
+ while(str[index]!='\0')
+ {
+ if(str[index]>='a'&&str[index]<='z')
+ {
+    str[index]-=32;
+ }
+ else if(str[index]>='A'&&str[index]<='Z')
+ {
+    str[index]+=32;
+ }
+ index++;
+ }
+ printf("%s",str);
+}
+________________________________________________________________________________________________________________________________________
+8.Write a program in C to count the total number of words in a string.
+
