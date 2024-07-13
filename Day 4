@@ -1,4 +1,14 @@
-3.find how many alpha,num,special.
+1.Write a program in C to input a string and print it.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ fgets(str,sizeof(str),stdin);
+ puts(str);
+}
+_________________________________________________________________________________________________________________________________
+3.Write a program in C to count the total number of alphabets, digits and special characters in a string.
 
 #include <stdio.h>
 void main()
