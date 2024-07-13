@@ -8,6 +8,19 @@ void main()
  puts(str);
 }
 _________________________________________________________________________________________________________________________________
+2.Write a program in C to find the length of a string without using library functions.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index;
+ fgets(str,sizeof(str),stdin);
+ puts(str);
+ for(index=0;str[index]!='\0';index++);
+ printf("string lenth=%d",index-1);
+}
+____________________________________________________________________________________________________________________________________
 3.Write a program in C to count the total number of alphabets, digits and special characters in a string.
 
 #include <stdio.h>
@@ -29,4 +42,6 @@ void main()
  }
  printf("alpha-%d\nnum-%d\nspl-%d",alpha,num,spl-1);
 }
-__________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________
+4.Write a program in C to count the total number of vowels or consonants in a string.
+
