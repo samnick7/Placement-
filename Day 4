@@ -32,7 +32,7 @@ void main()
  puts(str);
  while(str[index]!='\0')
  {
- if((str[index]>='a'&&str[index]<='z')||(str[index]>='a'&&str[index]<='z'))
+ if((str[index]>='a'&&str[index]<='z')||(str[index]>='A'&&str[index]<='Z'))
  alpha++;
  else if(str[index]>='0'&&str[index]<='9')
  num++;
@@ -64,5 +64,43 @@ void main()
  index++;
  }
  printf("vowel-%d\nconst-%d",vowel,con);
+}
+___________________________________________________________________________________________________________________________________________
+5.Write a program in C to convert string to uppercase.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index=0;
+ fgets(str,sizeof(str),stdin);
+ while(str[index]!='\0')
+ {
+ if(str[index]>='a'&&str[index]<='z')
+ {
+    str[index]-=32;
+ }
+ index++;
+ }
+ printf("%s",str);
+}
+__________________________________________________________________________________________________________________________________________
+6.Write a program in C to convert string to lowercase.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index=0;
+ fgets(str,sizeof(str),stdin);
+ while(str[index]!='\0')
+ {
+ if(str[index]>='A'&&str[index]<='Z')
+ {
+    str[index]+=32;
+ }
+ index++;
+ }
+ printf("%s",str);
 }
 ___________________________________________________________________________________________________________________________________________
