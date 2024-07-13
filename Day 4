@@ -1,0 +1,22 @@
+3.find how many alpha,num,special.
+
+#include <stdio.h>
+void main()
+{
+ char str[50];
+ int index=0,alpha=0,num=0,spl=0;
+ fgets(str,sizeof(str),stdin);
+ puts(str);
+ while(str[index]!='\0')
+ {
+ if((str[index]>='a'&&str[index]<='z')||(str[index]>='a'&&str[index]<='z'))
+ alpha++;
+ else if(str[index]>='0'&&str[index]<='9')
+ num++;
+ else
+ spl++;
+ index++;
+ }
+ printf("alpha-%d\nnum-%d\nspl-%d",alpha,num,spl-1);
+}
+__________________________________________________________________________________________________________________________
