@@ -259,6 +259,38 @@ void main()
     }
 }
 __________________________________________________________________________________________________________________________________________
+13.
+
+#include <stdio.h>
+void main()
+{
+    int n,temp;
+    printf("enter a array size:");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter a left rotation:");
+    scanf("%d",&rot);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+        for(int i=0;i<rot;i++)
+        {
+            temp=a[i];
+            for(int j=i+1;j<n;j++)
+            {
+                if(a[i]>a[j])
+                {
+                   temp=a[i];
+                   a[i]=a[j];
+                   a[j]=temp;
+                }
+            }
+        }
+        printf("second largest in array:%d\n",a[n-2]);
+        printf("second smallest in array:%d",a[1]);
+}
+______________________________________________________________________________________________________________________________________________
 14.Write a program  to remove the duplicates in an array .
 
 #include <stdio.h>
