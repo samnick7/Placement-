@@ -22,3 +22,28 @@ void main()
  }
  printf("%c",str[i]);
 }
+_________________________________________________________________________________________________________________________________
+5. last Repeating character in given string.
+
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+ char str[50];
+ fgets(str,sizeof(str),stdin);
+ int index=0,i,len=strlen(str)-2;
+ for(int index = len;index>=0;index--){
+     int counter=0;
+     for(int j=index-1;j>=0;j--){
+         if(str[index]==str[j]){
+             counter++;
+             i = index;
+             break;
+         }
+     }
+     if(counter==1){
+         break;
+     }
+ }
+ printf("%c",str[i]);
+}
