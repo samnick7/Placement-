@@ -1,0 +1,55 @@
+#include<stdio.h>
+#define size 8
+int s1[size],s2[size],top1=-1,top2=-1,count=0;
+void push1(int data)
+{
+    s1[++top1]=data;
+}
+void push2(int data)
+{
+    s2[++top2]=data;
+}
+int pop1()
+{
+    return s1[top1--];
+}
+int pop2()
+{
+    return s2[top2--];
+}
+void enque(int num)
+{
+    push1(num);
+    count++;
+}
+void deque()
+{
+   for(int i=0;i<count;i++)
+   {
+   int temp=pop1();
+   push2(temp);
+   }
+   printf("deleted element=%d\n",pop2());
+   count--;
+   for(int i=0;i<count;i++)
+   {
+   int temp=pop2();
+   push1(temp);
+   }
+}
+void display()
+{
+    for(int i=0;i<=top1;i++)
+    printf("%d ",s1[i]);
+}
+void main()
+{
+    enque(5);
+    enque(10);
+    enque(15);
+    display();
+    printf("\n");
+    deque();
+    enque(20);
+    display();
+}
