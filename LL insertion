@@ -82,3 +82,60 @@ void main()
     display();
 }
 ______________________________________________________________________________________________________________________________________________________________________________
+3.LL insertion at the middle and search data.
+
+#include<stdio.h>
+#include<malloc.h>
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+}node;
+node *newnode,*shadow,*tptr,*start=NULL;
+void insert(int num,int data)
+{
+    newnode=(node *)malloc(sizeof(node));
+    newnode -> data=num;
+    newnode -> next=NULL;
+    for(tptr=start;tptr&&tptr->data!=data;shadow=tptr,tptr=tptr -> next);
+    if(tptr==start)
+    {
+        start=newnode;
+    }
+    else
+    {
+        newnode -> next = shadow -> next;
+        shadow -> next =newnode;
+    }
+}
+void search(int num)
+{
+    for(tptr=start;tptr&&tptr->data!=num;tptr=tptr->next);
+    if(tptr==NULL)
+    {
+        printf("\nNot fount-%d",num);
+    }
+    else
+    {
+        printf("\nFount-%d",tptr->data);
+    }
+}
+void display()
+{
+    for(tptr=start;tptr;tptr=tptr->next)
+    {
+        printf("%d-->",tptr->data);
+    }
+    printf("none");
+}
+void main()
+{
+    insert(10,0);
+    insert(20,0);
+    insert(7,0);
+    insert(6,0);
+    insert(7,0);
+    insert(2,6);
+    display();
+    search(2);
+}
