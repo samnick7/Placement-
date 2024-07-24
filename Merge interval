@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    int  inter[100][3],insize=0;
+    while(1)
+    {
+    char str[4];
+    printf("do you want to continue (yes/no):");
+    scanf("%s",str);
+    if(strcmp(str,"no")==0)
+    {
+        break;
+    }
+    else
+    {
+        printf("start:");
+        scanf("%d",&inter[insize][0]);
+        printf("end:");
+        scanf("%d",&inter[insize][1]);
+        printf("value:");
+        scanf("%d",&inter[insize][2]);
+        insize++;
+        //selection sort based on start time.
+        for(int i=0;i<insize;i++)
+        {
+            int min=i;
+            for(int j=i+1;j<insize;j++)
+            {
+                if(inter[j][0]<inter[min][0])
+                    min=j;
+            }
+            for(int k=0;k<3;k++)
+            {
+                int temp=inter[i][k];
+                inter[i][k]=inter[min][k];
+                inter[min][k]=temp;
+            }
+        }
+        //merge intervals.
+        int merge[100][3],msize=0;
+        merge[0][0]=inter[0][0];
+        merge[0][1]=inter[0][1];
+        merge[0][2]=inter[0][2];
+        for(int i=1;i<insize;i++)
+        {
+            if(inter[i][0]<merge[msize][1])
+            {
+                if(inter[i][1]>=merge[msize][1])
+                {
+                    merge[msize][1]=inter[i][1];
+                }
+                merge[msize][2]+=inter[i][2];
+            }
+            else
+            {
+                msize++;
+                merge[msize][0]=inter[i][0];
+                merge[msize][1]=inter[i][1];
+                merge[msize][2]=inter[i][2];
+            }
+        }
+        for(int i=0;i<=msize;i++)
+        printf("%d - %d  %d\n",merge[i][0],merge[i][1],merge[i][2]);
+    }
+    }
+}
