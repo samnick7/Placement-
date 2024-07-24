@@ -1,0 +1,103 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#define max(a,b) (a)>(b)?(a):(b)
+typedef struct Node
+{
+    int data;
+    struct Node *left,*right;
+}NODE;
+NODE *newnode,*root;
+NODE* createnode(int num)
+{
+    newnode=(NODE *)malloc(sizeof(NODE));
+    newnode->data=num;
+    newnode->left=NULL;
+    newnode->right=NULL;
+    return newnode;
+}
+NODE* insert(NODE* node,int num)
+{
+    if(node==NULL)
+    return createnode(num);
+    
+    else if(num<node->data)
+    node->left=insert(node->left,num);
+    
+    else if(num>node->data)
+    node->right=insert(node->right,num);
+    
+    return node;
+}
+void displaypre(NODE* node)
+{
+    if(node!=NULL)
+    {
+        printf("%d ",node->data);
+        displaypre(node->left);
+        displaypre(node->right);
+    }
+}
+void displayin(NODE* node)
+{
+    if(node!=NULL)
+    {
+        displayin(node->left);
+        printf("%d ",node->data);
+        displayin(node->right);
+    }
+}
+void displaypost(NODE* node)
+{
+    if(node!=NULL)
+    {
+        displaypost(node->left);
+        displaypost(node->right);
+        printf("%d ",node->data);
+    }
+}
+int height(NODE* node)
+{
+    if(node==NULL)
+    return -1;
+    return max(height(node->left),height(node->right))+1;
+}
+int min(NODE* node)
+{
+    if(node==NULL)
+    return -1;
+    else{
+        while(node->left!=NULL)
+        node=node->left;
+    }
+    return node->data;
+}
+int Max(NODE* node)
+{
+    if(node==NULL)
+    return -1;
+    else{
+        while(node->right!=NULL)
+        node=node->right;
+    }
+    return node->data;
+}
+void main()
+{
+    root=insert(root,9);
+    insert(root,7);
+    insert(root,14);
+    insert(root,6);
+    insert(root,8);
+    insert(root,11);
+    insert(root,16);
+    printf("preorder:\n");
+    displaypre(root);
+    printf("\ninorder:\n");
+    displayin(root);
+    printf("\npostorder:\n");
+    displaypost(root);
+    printf("\nheight of tree:%d",height(root));
+    printf("\nmin of tree:%d",min(root));
+    printf("\nmax of tree:%d",Max(root));
+}
